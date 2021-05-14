@@ -13,7 +13,7 @@ cd neor_farm/neor_ws/
 rosdep install --from-paths src --ignore-src --rosdistro=melodic -y
 ```
 
-change crop_follow_object.py file's permissions,like this:
+change crop_follow_object.py file's permissions,like this:s
 
 allow this file as a execute file.
 
@@ -40,6 +40,7 @@ roslaunch neor neor_gazebo_sensors.launch
 ```bash
 # open a Terminal
 # copy models from neor_crop_follow/gazebo_models files      into         .gazebo/models folder.
+mkir ~/.gazebo/models
 cd ~/neor_farm/neor_ws/src/neor_crop_follow/gazebo_models
 cp -r * ~/.gazebo/models/
 
@@ -70,7 +71,7 @@ rosrun neor_crop_follow crop_follow_object.py     # remember enable execute perm
 
 # Chapter Two ： Gmapping and Navigation
 
-## Step 1: NEOR ROS Gmapping
+## Step 1: NEOR ROS Gmappings
 
 ```bash
 # open another Terminal
@@ -87,7 +88,7 @@ Save map file in : “~/neor_farm/neor_ws/src/neor_navigation/map/” folder.
 ```bash
 #open a new Terminal
 cd ~/neor_farm/neor_ws/src/neor_navigation/map
-rosrun map_server map_save -f map
+rosrun map_server map_saver -f map
 ```
 
 
