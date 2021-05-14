@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="neor">
+  <link 
+    name="base_link">
+    <!--
+    <inertial>
+      <origin
+        xyz="0.167879507365628 -0.00359252647980702 0.119298610168138"
+        rpy="0 0 0" />
+      <mass
+        value="1.99769813489116" />
+      <inertia
+        ixx="0.00884194890576968"
+        ixy="-2.85763205109085E-07"
+        ixz="1.13692269308844E-06"
+        iyy="0.0122849475045731"
+        iyz="2.62546849263556E-05"
+        izz="0.0198557145704335" />
+    </inertial>
+    -->
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://neor/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://neor/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left_wheel_link">
+    <inertial>
+      <origin
+        xyz="0 2.77555756156289E-17 6.93889390390723E-18"
+        rpy="0 0 0" />
+      <mass
+        value="5.42406230688666" />
+      <inertia
+        ixx="0.00666461186501377"
+        ixy="-4.34780728173011E-17"
+        ixz="-3.46065314223795E-08"
+        iyy="0.0108754737237616"
+        iyz="1.48898597957356E-17"
+        izz="0.00666462264232009" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://neor/meshes/left_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.647058823529412 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://neor/meshes/left_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.11025 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_wheel_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right_wheel_Link">
+    <inertial>
+      <origin
+        xyz="1.11022302462516E-16 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="5.42406230688665" />
+      <inertia
+        ixx="0.00666458263690274"
+        ixy="-4.33823931917284E-17"
+        ixz="-5.3225217388757E-09"
+        iyy="0.0108754737237616"
+        iyz="1.47257298016766E-17"
+        izz="0.0066646518704311" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://neor/meshes/right_wheel_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.647058823529412 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://neor/meshes/right_wheel_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.11025 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_wheel_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="left_caster_Link">
+    <inertial>
+      <origin
+        xyz="0.0115894835490932 -0.0160834240912808 -0.0271810314838372"
+        rpy="0 0 0" />
+      <mass
+        value="0.0457759696915572" />
+      <inertia
+        ixx="4.32568497674313E-05"
+        ixy="-2.58020492610068E-06"
+        ixz="4.86678404730977E-06"
+        iyy="4.49782650453277E-05"
+        iyz="-6.75393340776466E-06"
+        izz="4.36074022403523E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://neor/meshes/left_caster_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://neor/meshes/left_caster_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_caster_joint"
+    type="continuous">
+    <origin
+      xyz="0.4006 0.1125 0.0465"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_caster_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="left_caster_wheel_Link">
+    <inertial>
+      <origin
+        xyz="0 1.38777878078145E-17 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.232226528953357" />
+      <inertia
+        ixx="0.000250095566342319"
+        ixy="6.15717679394067E-05"
+        ixz="2.21629952945565E-19"
+        iyy="0.000209016281398468"
+        iyz="1.5657790917171E-19"
+        izz="0.00016464860902793" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://neor/meshes/left_caster_wheel_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://neor/meshes/left_caster_wheel_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_caster_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.024532 -0.034044 -0.066"
+      rpy="0 0 0" />
+    <parent
+      link="left_caster_Link" />
+    <child
+      link="left_caster_wheel_Link" />
+    <axis
+      xyz="-0.81131 -0.58462 0" />
+  </joint>
+  <link
+    name="right_caster_Link">
+    <inertial>
+      <origin
+        xyz="0.0188041520422844 -0.00627670432990625 -0.0271810284056899"
+        rpy="0 0 0" />
+      <mass
+        value="0.0457759516780475" />
+      <inertia
+        ixx="4.62921637504073E-05"
+        ixy="-1.63379166334245E-06"
+        ixz="7.89645340975582E-06"
+        iyy="4.194292119082E-05"
+        iyz="-2.6357777730359E-06"
+        izz="4.36073573670601E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://neor/meshes/right_caster_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://neor/meshes/right_caster_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_caster_joint"
+    type="continuous">
+    <origin
+      xyz="0.4006 -0.1125 0.0465"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_caster_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right_caster_wheel_Link">
+    <inertial>
+      <origin
+        xyz="-5.55111512312578E-17 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.232226528953358" />
+      <inertia
+        ixx="0.00017766232401311"
+        ixy="3.89873545385007E-05"
+        ixz="1.36110275740017E-19"
+        iyy="0.000281449523727678"
+        iyz="4.07814885635416E-19"
+        izz="0.000164648609027931" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://neor/meshes/right_caster_wheel_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://neor/meshes/right_caster_wheel_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_caster_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.039803 -0.013286 -0.066"
+      rpy="0 0 0" />
+    <parent
+      link="right_caster_Link" />
+    <child
+      link="right_caster_wheel_Link" />
+    <axis
+      xyz="-0.31662 -0.94855 0" />
+  </joint>
+</robot>

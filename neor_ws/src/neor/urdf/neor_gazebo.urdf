@@ -1,0 +1,703 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="neor">
+  <link 
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.167879507365628 -0.00359252647980702 0.119298610168138"
+        rpy="0 0 0" />
+      <mass
+        value="1.99769813489116" />
+      <inertia
+        ixx="0.00884194890576968"
+        ixy="-2.85763205109085E-07"
+        ixz="1.13692269308844E-06"
+        iyy="0.0122849475045731"
+        iyz="2.62546849263556E-05"
+        izz="0.0198557145704335" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://neor/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://neor/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left_wheel_link">
+    <inertial>
+      <origin
+        xyz="0 2.77555756156289E-17 6.93889390390723E-18"
+        rpy="0 0 0" />
+      <mass
+        value="5.42406230688666" />
+      <inertia
+        ixx="0.00666461186501377"
+        ixy="-4.34780728173011E-17"
+        ixz="-3.46065314223795E-08"
+        iyy="0.0108754737237616"
+        iyz="1.48898597957356E-17"
+        izz="0.00666462264232009" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://neor/meshes/left_wheel_link.STL" />
+      </geometry>
+
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://neor/meshes/left_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.11025 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_wheel_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right_wheel_Link">
+    <inertial>
+      <origin
+        xyz="1.11022302462516E-16 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="5.42406230688665" />
+      <inertia
+        ixx="0.00666458263690274"
+        ixy="-4.33823931917284E-17"
+        ixz="-5.3225217388757E-09"
+        iyy="0.0108754737237616"
+        iyz="1.47257298016766E-17"
+        izz="0.0066646518704311" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://neor/meshes/right_wheel_Link.STL" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://neor/meshes/right_wheel_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.11025 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_wheel_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="left_caster_Link">
+    <inertial>
+      <origin
+        xyz="0.0115894835490932 -0.0160834240912808 -0.0271810314838372"
+        rpy="0 0 0" />
+      <mass
+        value="0.0457759696915572" />
+      <inertia
+        ixx="4.32568497674313E-05"
+        ixy="-2.58020492610068E-06"
+        ixz="4.86678404730977E-06"
+        iyy="4.49782650453277E-05"
+        iyz="-6.75393340776466E-06"
+        izz="4.36074022403523E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://neor/meshes/left_caster_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://neor/meshes/left_caster_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_caster_joint"
+    type="continuous">
+    <origin
+      xyz="0.4006 0.1125 0.0465"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_caster_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="left_caster_wheel_Link">
+    <inertial>
+      <origin
+        xyz="0 1.38777878078145E-17 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.232226528953357" />
+      <inertia
+        ixx="0.000250095566342319"
+        ixy="6.15717679394067E-05"
+        ixz="2.21629952945565E-19"
+        iyy="0.000209016281398468"
+        iyz="1.5657790917171E-19"
+        izz="0.00016464860902793" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://neor/meshes/left_caster_wheel_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://neor/meshes/left_caster_wheel_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_caster_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.024532 -0.034044 -0.066"
+      rpy="0 0 0" />
+    <parent
+      link="left_caster_Link" />
+    <child
+      link="left_caster_wheel_Link" />
+    <axis
+      xyz="-0.81131 -0.58462 0" />
+  </joint>
+  <link
+    name="right_caster_Link">
+    <inertial>
+      <origin
+        xyz="0.0188041520422844 -0.00627670432990625 -0.0271810284056899"
+        rpy="0 0 0" />
+      <mass
+        value="0.0457759516780475" />
+      <inertia
+        ixx="4.62921637504073E-05"
+        ixy="-1.63379166334245E-06"
+        ixz="7.89645340975582E-06"
+        iyy="4.194292119082E-05"
+        iyz="-2.6357777730359E-06"
+        izz="4.36073573670601E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://neor/meshes/right_caster_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://neor/meshes/right_caster_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_caster_joint"
+    type="continuous">
+    <origin
+      xyz="0.4006 -0.1125 0.0465"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_caster_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right_caster_wheel_Link">
+    <inertial>
+      <origin
+        xyz="-5.55111512312578E-17 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.232226528953358" />
+      <inertia
+        ixx="0.00017766232401311"
+        ixy="3.89873545385007E-05"
+        ixz="1.36110275740017E-19"
+        iyy="0.000281449523727678"
+        iyz="4.07814885635416E-19"
+        izz="0.000164648609027931" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://neor/meshes/right_caster_wheel_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://neor/meshes/right_caster_wheel_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_caster_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.039803 -0.013286 -0.066"
+      rpy="0 0 0" />
+    <parent
+      link="right_caster_Link" />
+    <child
+      link="right_caster_wheel_Link" />
+    <axis
+      xyz="-0.31662 -0.94855 0" />
+  </joint>
+
+  <!--  手动添加深度摄像头模型  -->
+  <link name="deep_camera_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://neor/meshes/kinect_Link.STL"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name ="deep_camera_joints" type="fixed">
+    <origin xyz="0.40 0.0 0.197" rpy="-1.57 0.0 -1.57"/>
+    <parent link="base_link"/>
+    <child link="deep_camera_link"/>
+  </joint>
+<!--*********************************************************************-->
+ 
+  <!--  手动添加激光雷达模型 -->
+  <link name="laser_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.08" radius="0.05"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name ="2Dlaser_joints" type="fixed">
+    <origin xyz="0.22 0.0 0.23" rpy="0.0 0.0 0.0"/>
+    <parent link="base_link"/>
+    <child link="laser_link"/>
+  </joint>
+<!--*********************************************************************-->
+ 
+ <!--  手动添加摄像头模型   -->
+<link name="camerabase_link">
+    <visual>
+      <geometry>
+        <box size="0.03 0.03 0.03"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name ="camerabase_joints" type="fixed">
+    <origin xyz="0.45 0.0 0.15" rpy="0.0 0.26 0.0"/>
+    <parent link="base_link"/>
+    <child link="camerabase_link"/>
+  </joint>
+  <link name="camera_link">
+    <visual>
+      <geometry>
+        <sphere radius="0.0075" />
+      </geometry>
+    </visual>
+  </link>
+  <joint name ="camera_joints" type="fixed">
+    <origin xyz="0.015 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="camerabase_link"/>
+    <child link="camera_link"/>
+  </joint>
+
+<!--*********************************************************************-->
+
+  <!--  手动添加imu模型   -->
+  <link name="imu_link">
+    <visual>
+      <geometry>
+        <box size="0.015 0.015 0.007"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name ="imu_joints" type="fixed">
+    <origin xyz="0.0 0.0 0.15" rpy="0.0 0.0 0.0"/>
+    <parent link="base_link"/>
+    <child link="imu_link"/>
+  </joint>
+<!--*********************************************************************-->
+
+ <!--为link配置颜色-->
+  <gazebo reference="base_link">
+    <material>Gazebo/White</material>      <!--  (Yellow) (YellowGlow) (YellowTransparent)  (ZincYellow) (Yellow) (DarkYellow) -->
+  </gazebo>
+
+  <gazebo reference="right_caster_Link">
+    <material>Gazebo/DarkGrey</material>
+  </gazebo>
+
+  <gazebo reference="left_caster_Link">
+    <material>Gazebo/DarkGrey</material>
+  </gazebo>
+
+  <gazebo reference="left_caster_wheel_Link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <gazebo reference="right_caster_wheel_Link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  
+  <gazebo reference="left_wheel_link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <gazebo reference="right_wheel_Link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+    <gazebo reference="deep_camera_link">
+    <material>Gazebo/Black </material>
+  </gazebo>
+
+  <gazebo reference="laser_link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <gazebo reference="camera_link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <gazebo reference="imu_link">
+    <material>Gazebo/SkyBlue</material>
+  </gazebo>
+<!--*********************************************************************-->
+
+<!--为机器人的关节 joint 添加传动机构-->>
+  <transmission name="simple_trans_left_Back">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_wheel_joint">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_wheel_motor">
+      <mechanicalReduction>50</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="simple_trans_right_Back">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_wheel_jont">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_wheel_motor">
+      <mechanicalReduction>50</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+<!--*********************************************************************-->
+
+<!--为机器人添加差速控制插件-->  
+  <gazebo>
+    <plugin name="differential_drive_controller_left" filename="libgazebo_ros_diff_drive.so">
+      <rosDebugLevel>Debug</rosDebugLevel>
+      <publishWheelTF>true</publishWheelTF>
+      <robotNamespace>/</robotNamespace>
+      <publishTf>1</publishTf>
+      <publishWheelJointState>true</publishWheelJointState>
+      <alwaysOn>true</alwaysOn>
+      <updateRate>100.0</updateRate>
+      <legacyMode>true</legacyMode>
+      <leftJoint>left_wheel_joint</leftJoint>
+      <rightJoint>right_wheel_joint</rightJoint>
+      <wheelSeparation>0.24</wheelSeparation>
+      <wheelDiameter>0.14</wheelDiameter>
+      <publishOdomTF>true</publishOdomTF>
+      <wheelTorque>30</wheelTorque>
+      <wheelAcceleration>0.15</wheelAcceleration>
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryFrame>odom</odometryFrame> 
+      <odometryTopic>odom</odometryTopic> 
+      <odometrySource>1</odometrySource>
+      <robotBaseFrame>base_link</robotBaseFrame>
+    </plugin>
+  </gazebo> 
+<!--*********************************************************************-->
+
+
+
+ <!-- 手动添加深度相机仿真插件 -->
+  <gazebo reference="deep_camera_link">
+    <sensor name="deep_camera" type="depth">
+      <update_rate>20</update_rate>
+      <camera>
+        <horizontal_fov>1.047198</horizontal_fov>
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.05</near>
+          <far>3</far>
+        </clip>
+      </camera>
+      <plugin name="deep_camera_controller" filename="libgazebo_ros_openni_kinect.so">
+        <baseline>0.2</baseline>
+        <alwaysOn>true</alwaysOn>
+        <updateRate>1.0</updateRate>
+        <cameraName>/deep_camera</cameraName>
+        <imageTopicName>/deep_camera/image_raw</imageTopicName>
+        <cameraInfoTopicName>/deep_camera/color/camera_info</cameraInfoTopicName>
+        <depthImageTopicName>/deep_camera/depth/image_raw</depthImageTopicName>
+        <depthImageInfoTopicName>/deep_camera/depth/camera_info</depthImageInfoTopicName>
+        <pointCloudTopicName>/deep_camera/depth/points</pointCloudTopicName>
+        <frameName>deep_camera_link</frameName>
+        <pointCloudCutoff>0.5</pointCloudCutoff>
+        <pointCloudCutoffMax>3.0</pointCloudCutoffMax>
+        <distortionK1>0.00000001</distortionK1>
+        <distortionK2>0.00000001</distortionK2>
+        <distortionK3>0.00000001</distortionK3>
+        <distortionT1>0.00000001</distortionT1>
+        <distortionT2>0.00000001</distortionT2>
+        <CxPrime>0</CxPrime>
+        <Cx>0</Cx>
+        <Cy>0</Cy>
+        <focalLength>0</focalLength>
+        <hackBaseline>0</hackBaseline>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+<!--*********************************************************************-->
+
+  <!-- 手动添加camera仿真插件 -->
+  <gazebo reference="camera_link">
+    <sensor type="camera" name="camera1">
+      <update_rate>30.0</update_rate>
+      <camera name="head">
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>800</width>
+          <height>800</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>300</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <!-- Noise is sampled independently per pixel on each frame.
+               That pixel's noise value is added to each of its color
+               channels, which at that point lie in the range [0,1]. -->
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>0.0</updateRate>
+        <cameraName>camera1</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>base_link</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+      </plugin>
+    </sensor>
+  </gazebo>
+<!--*********************************************************************-->
+
+
+  <!-- 手动添加深激光雷达仿真插件  -->
+  <gazebo reference="laser_link">
+    <sensor type="ray" name="head_laser_sensor">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>false</visualize>
+      <update_rate>40</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>720</samples>
+            <resolution>1</resolution>
+            <min_angle>-1.570796</min_angle>
+            <max_angle>1.570796</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.10</min>
+          <max>30.0</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <!-- Noise parameters based on published spec for Hokuyo laser
+               achieving "+-30mm" accuracy at range < 10m.  A mean of 0.0m and
+               stddev of 0.01m will put 99.7% of samples within 0.03m of the true
+               reading. -->
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin name="gazebo_ros_head_laser_controller" filename="libgazebo_ros_laser.so">
+        <topicName>scan</topicName>
+        <frameName>laser_link</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+  
+<!--*********************************************************************-->
+
+
+  <!-- 手动添加imu仿真插件  -->
+  <gazebo reference="imu_link">
+    <gravity>true</gravity>
+    <sensor name="imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <topic>__default_topic__</topic>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>imu</topicName>
+        <bodyName>imu_link</bodyName>
+        <updateRateHZ>10.0</updateRateHZ>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0 0 0</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>imu_link</frameName>
+        <initialOrientationAsReference>false</initialOrientationAsReference>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+  
+<!--*********************************************************************-->
+
+ 
+
+</robot>

@@ -1,0 +1,21 @@
+<launch>
+ <!-- 加载gazebo仿真节点 -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch" >
+  <!--
+    <arg name="world_name" value="$(find neor)/worlds/cooneo_office.world"/>
+    -->
+    <arg name="world_name" value="$(find neor)/worlds/cooneo_office.world"/>
+  </include>
+  <node name="spawn_model" pkg="gazebo_ros" type="spawn_model" args="-file $(find neor)/urdf/neor_gazebo.urdf -urdf -model neor" output="screen" />
+  <node name="fake_joint_calibration" pkg="rostopic" type="rostopic" args="pub /calibrated std_msgs/Bool true" />
+  
+  <!-- Launch a rqt steering GUI for publishing to /steer_bot/steer_drive_controller/cmd_vel -->
+  <node pkg="rqt_robot_steering" type="rqt_robot_steering" name="rqt_robot_steering" >
+      <param name="default_topic" value="cmd_vel"/>                         <!-- default velocity control topic name -->
+      <param name="default_vx_max" value="0.4"/>                        <!-- linear velocity max value    m/s -->
+      <param name="default_vx_min" value="-0.4"/>                       <!-- linear velocity min value    m/s-->
+      <param name="default_vw_max" value="0.4"/>                    <!-- angular velocity max value  rad/s (adaptor for urdf joint limit) -->
+      <param name="default_vw_min" value="-0.4"/>                   <!-- angular velocity min value  rad/s (adaptor for urdf joint limit) -->
+  </node> 
+
+</launch>

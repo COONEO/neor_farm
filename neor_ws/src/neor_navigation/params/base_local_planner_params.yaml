@@ -1,0 +1,37 @@
+TrajectoryPlannerROS:
+   max_vel_x: 1.0
+   min_vel_x: -1.0 #-0.1
+   max_vel_y: 0.0  # zero for a differential drive robot
+   min_vel_y: 0.0
+   min_in_place_vel_theta: 0.3
+   escape_vel: -0.3
+   acc_lim_x: 2.5 #2.5
+   acc_lim_y: 0.0 # zero for a differential drive robot
+   acc_lim_theta: 3.2  #3.2
+
+   holonomic_robot: false
+   yaw_goal_tolerance: 0.15 # about 6 degrees 0.1
+   xy_goal_tolerance: 0.10  # 10 cm
+   latch_xy_goal_tolerance: false #设置为true,如果到达容错距离内,机器人就会原地旋转,即使转动是会跑出容错距离外.
+   pdist_scale: 0.8
+   gdist_scale: 0.6
+   meter_scoring: true
+
+   heading_lookahead: 0.325
+   heading_scoring: false
+   heading_scoring_timestep: 0.8
+   occdist_scale: 0.02        #定义控制器躲避障碍物的程度.0.1
+   goal_distance_bias: 20     #衡量机器人无论走那一条路径应该以多大的权重尝试到达目标点，越小与全局路径的一致越高
+   path_distance_bias: 32     #局部规划器以多大的权重与全局规划器保持一致
+   oscillation_reset_dist: 0.05
+   publish_cost_grid_pc: false
+   prune_plan: true          #机器人前进的时候，是否清除身后外的轨迹
+
+   sim_time: 1.7
+   sim_granularity: 0.025        #模拟步长
+   angular_sim_granularity: 0.025
+   vx_samples: 20
+   vy_samples: 0 # zero for a differential drive robot
+   vtheta_samples: 40
+   dwa: true  
+   simple_attractor: false

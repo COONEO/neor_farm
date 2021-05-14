@@ -1,0 +1,22 @@
+<launch>
+
+   <master auto="start"/>
+ <!-- Run the map server --> 
+    <node name="load_map_to_amcl" pkg="map_server" type="map_server" args="$(find neor_navigation)/map/map.yaml"/>
+
+ <!--- Run AMCL --> 
+   <include file="$(find neor_navigation)/launch/amcl.launch" />
+    
+   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <rosparam file="$(find neor_navigation)/params/costmap_common_params.yaml" command="load" ns="global_costmap" /> 
+    <rosparam file="$(find neor_navigation)/params/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find neor_navigation)/params/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find neor_navigation)/params/move_base_params.yaml" command="load" />
+    <rosparam file="$(find neor_navigation)/params/global_costmap_params.yaml" command="load" /> 
+    <rosparam file="$(find neor_navigation)/params/dwa_local_planner_params.yaml" command="load" />
+    <rosparam file="$(find neor_navigation)/params/global_planner_params.yaml" command="load"/>
+ </node>
+
+</launch> 
+
+

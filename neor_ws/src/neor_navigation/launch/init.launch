@@ -1,0 +1,11 @@
+<launch>
+  <node name="pose_initial" pkg="pose_initial"  type="pose_initial">
+   <param name="pos_x" value="0.0"/>
+   <param name="pos_y" value="0.0"/>
+   <param name="pos_z" value="0.0"/>
+   <param name="q_x" value="0"/>
+   <param name="q_y" value="0"/>
+   <param name="q_z" value="0.139"/>
+   <param name="q_w" value="0.99"/>
+  </node>
+</launch>

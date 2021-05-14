@@ -1,0 +1,13 @@
+controllers: {
+   base_controller: {
+       type: diff_controller,     #差速控制模型
+       base_frame_id: base_link,  #需要控制的车体的坐标系
+       base_width: 0.26,  #轮间距
+       ticks_meter: 4100,  #指令发布频率
+       Kp: 12, 
+       Kd: 12, 
+       Ki: 0, 
+       Ko: 50, 
+       accel_limit: 1.0 
+    }
+}
