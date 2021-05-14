@@ -40,7 +40,7 @@ roslaunch neor neor_gazebo_sensors.launch
 ```bash
 # open a Terminal
 # copy models from neor_crop_follow/gazebo_models files      into         .gazebo/models folder.
-mkir ~/.gazebo/models
+mkdir ~/.gazebo/models
 cd ~/neor_farm/neor_ws/src/neor_crop_follow/gazebo_models
 cp -r * ~/.gazebo/models/
 
