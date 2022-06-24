@@ -34,6 +34,8 @@ wheel_distance_: 差速类型的两驱动轮之间的间距 （ 单位: m）
 2. 串口绑定
 
 ```bash
+lsusb # 记录下 STM32 串口的两个  ID ，然后替换掉下面引号里面的 ... 
+
 sudo vim /etc/udev/rules.d/neor_mini_arduino.rules
 KERNEL=="ttyUSB*", ATTRS{idVendor}=="....", ATTRS{idProduct}=="....",MODE:="0777", SYMLINK+="Stm32_PORT"
 KERNEL=="ttyUSB*", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7523",MODE:="0777", SYMLINK+="IMU_PORT"
