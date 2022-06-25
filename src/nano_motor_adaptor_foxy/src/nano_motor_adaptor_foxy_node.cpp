@@ -119,11 +119,11 @@ bool MotorAdaptor::calcVelocity(uint8_t *rx, double &vehicle_linear_, double &ve
 
     vehicle_linear_ = (v_left + v_right) / 2;
     vehicle_angle_ = (v_right - v_left) / wheel_distance_;
-
-    // std::cout<<"Get Motor Velocity Left right :"<<v_left<<"  "<<v_right<<"
-    // m/s "<<std::endl;   // 按照规则解算之后的左右轮速度值 std::cout<<"Get
-    // Motor Velocity Left right :"<<Velocity_A<<"  "<<Velocity_B<<std::endl; //
-    // 打印接收到的原始值
+    
+    // 按照规则解算之后的左右轮速度值 
+    std::cout<<"Get Motor Velocity Left right :"<<v_left<<"  "<<v_right<<" m/s "<<std::endl;   
+    std::cout<<"Get // Motor Velocity Left right :"<<Velocity_A<<"  "<<Velocity_B<<std::endl; 
+    
 
     return 1;
   }
@@ -185,7 +185,11 @@ void MotorAdaptor::send_thread()
       cmd[6] = (uint8_t)5000;
       cmd[7] = check_data(cmd, 3, 7);
       ser_port_.write(cmd, 8);
+
     }
+
+    // test send data.
+    // RCLCPP_INFO(this->get_logger(),"encoder recv: %x, %x, %x, %x ,%x, %x, %x, %x", cmd[0], cmd[1], cmd[2],cmd[3], cmd[4], cmd[5],cmd[6],cmd[7]);
 
     Rec_cmd_vel_.linear_ = 0.0;
     Rec_cmd_vel_.angle_ = 0.0;
@@ -227,7 +231,7 @@ void MotorAdaptor::rec_motors()
     //读取有效数据位,发送完毕后就去读信息，如果读取到的是16 个字节，则验算，解算
     if (ser_port_.read(resp, 8) == 8)
     {
-      // RCLCPP_INFO(this->get_logger(),"encoder recv: %x, %x, %x, %x ,%x, %x, %x, %x", resp[0], resp[1], resp[2],resp[3], resp[4], resp[5],resp[6],resp[7]);
+      RCLCPP_INFO(this->get_logger(),"encoder recv: %x, %x, %x, %x ,%x, %x, %x, %x", resp[0], resp[1], resp[2],resp[3], resp[4], resp[5],resp[6],resp[7]);
 
       rclcpp::Time now = this->now();
       diff_ = (now - lastest_response_time_).seconds();
